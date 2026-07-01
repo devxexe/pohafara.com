@@ -23,32 +23,29 @@
 
     <!-- NAVIGATION START -->
     <nav class="navbar">
-        <a href="#" class="logo-container">
-            <img src="images/logo.png" alt="PohaFara Logo" class="navbar-logo">
-            <span class="logo-text">PohaFara<span>.com</span></span>
+    <a href="#" class="logo-container">
+        <img src="images/logo.png" alt="PohaFara Logo" class="navbar-logo">
+        <span class="logo-text">PohaFara<span>.com</span></span>
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+        <li><a href="#" class="nav-item"><i class="fa-solid fa-utensils"></i> <span>Menu</span></a></li>
+        <li>
+            <a href="#" class="nav-item status-nav-item">
+                <i class="fa-solid fa-circle-dot"></i>
+                <span>Status</span> <span class="status-badge"><span class="dot"></span>Open</span>
+            </a>
+        </li>
+        <li><a href="#" class="nav-item"><i class="fa-solid fa-phone"></i> <span>Contact</span></a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <a href="tel:+911234567890" class="nav-call-link" title="Call to Order">
+            <i class="fa-solid fa-phone"></i> <span>Call Us</span>
         </a>
-
-        <ul class="nav-links">
-            <li><a href="#" class="nav-item active">Home</a></li>
-            <li><a href="#" class="nav-item">Menu</a></li>
-            <li>
-                <a href="#" class="nav-item">
-                    Status <span class="status-badge"><span class="dot"></span>Open</span>
-                </a>
-            </li>
-            <li><a href="#" class="nav-item">Contact</a></li>
-        </ul>
-
-        <div class="nav-actions">
-            <a href="tel:+911234567890" class="nav-call-link" title="Call to Order">
-                <i class="fa-solid fa-phone"></i> <span>Call Us</span>
-            </a>
-            
-            <a href="#" class="btn-swiggy-3d">
-                <i class="fa-solid fa-motorcycle"></i> Order on Swiggy
-            </a>
-        </div>
-    </nav>
+    </div>
+</nav>
     <!-- NAVIGATION END -->
 
     <!-- HERO SECTION START -->
@@ -548,5 +545,39 @@
     </div>
 </footer>
 <!-- FOOTER END -->
+
+<!-- FLOATING DELIVERY POP=UP START -->
+ <div class="floating-delivery-widget" id="deliveryWidget">
+    <button class="widget-close-btn" onclick="closeDeliveryWidget()" aria-label="Close widget">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    
+    <p class="widget-title">Order Fast! 🛵</p>
+    
+    <div class="widget-actions">
+        <a href="#" target="_blank" class="widget-btn swiggy-btn">
+            <i class="fa-solid fa-motorcycle"></i> Swiggy
+        </a>
+        <a href="https://wa.me/911234567890" target="_blank" class="widget-btn whatsapp-btn">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
+</div>
+<!-- FLOATING DELIVERY POP=UP END -->
+
+
+<script>
+        function closeDeliveryWidget() {
+            const widget = document.getElementById("deliveryWidget");
+            if (widget) {
+                widget.style.transition = "all 0.3s ease";
+                widget.style.opacity = "0";
+                widget.style.transform = "translateX(100px) scale(0.8)";
+                setTimeout(() => {
+                    widget.style.display = "none";
+                }, 300);
+            }
+        }
+    </script>
 </body>
 </html>
