@@ -337,210 +337,69 @@ body {
     }
 }
 /* NAVBAR END */
-
-/* HERO SECTION START */
-/* ==========================================================================
-   Step 2: Hero Section Styling (3D Layout & Depth Engine)
-   ========================================================================== */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px 8%;
-    min-height: calc(100vh - 120px);
-    background: linear-gradient(140deg, #ffffff 55%, #fff7e6 100%);
-    width: 100%;
+    padding: 80px 10%;
+    min-height: 90vh;
+    background: linear-gradient(135deg, #1a0a0a 0%, #2b1414 100%);
+    gap: 50px;
 }
 
-.hero-content {
-    flex: 1;
-    max-width: 600px;
+.hero-content { flex: 1; text-align: left; }
+
+/* Content Styling */
+.hero-tagline { color: #d4af37; font-weight: 700; letter-spacing: 3px; margin-bottom: 20px; font-size: 0.9rem; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #fff; margin-bottom: 25px; line-height: 1.1; }
+.hero-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 35px; max-width: 500px; }
+
+/* Image Area Styling */
+.hero-image-area { 
+    flex: 1; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
 }
 
-.hero-tagline {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--secondary-yellow);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-}
-
-.hero-title {
-    font-size: 3.4rem;
-    color: var(--primary-maroon);
-    line-height: 1.2;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.hero-desc {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444444;
-    margin-bottom: 35px;
-}
-
-/* Location Badge Styling */
-.hero-location {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.95rem;
-    color: #444444;
-    margin-bottom: 40px;
-    background: var(--white);
-    padding: 14px 20px;
-    border-left: 6px solid var(--primary-maroon);
-    width: fit-content;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.03);
-    border-radius: 0 10px 10px 0;
-}
-
-.hero-location i {
-    color: var(--primary-maroon);
-    font-size: 1.2rem;
-}
-
-/* 3D Push Buttons Area */
-.hero-buttons {
-    display: flex;
-    gap: 20px;
-}
-
-.btn-primary-3d {
-    background-color: var(--primary-maroon);
-    color: var(--white);
-    padding: 16px 36px;
-    border-radius: 35px;
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: var(--smooth-ease);
-    box-shadow: 0 6px 15px rgba(139, 30, 34, 0.25);
-    display: inline-block;
-}
-
-.btn-secondary-3d {
-    background-color: var(--secondary-yellow);
-    color: #000000;
-    padding: 16px 36px;
-    border-radius: 35px;
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: var(--smooth-ease);
-    box-shadow: 0 6px 15px rgba(242, 184, 38, 0.25);
-    display: inline-block;
-}
-
-.btn-primary-3d:hover, .btn-secondary-3d:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.18);
-}
-
-.btn-primary-3d:active, .btn-secondary-3d:active {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* ==========================================================================
-   Pure CSS 3D Pop-Out & Floating Image Module
-   ========================================================================== */
-.hero-image-area {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    perspective: 1000px; /* Gives 3D workspace depth */
-}
-
-.hero-3d-card {
-    width: 440px;
-    height: 440px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle, var(--secondary-yellow) 40%, var(--primary-maroon) 100%);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Smooth fluid background shape */
-    border: 8px solid var(--white);
-    
-    /* 3D Isometric Tilt and Shadow Layers */
-    transform: rotateX(15deg) rotateY(-15deg) rotateZ(5deg);
-    transform-style: preserve-3d;
-    box-shadow: -15px 20px 35px rgba(0, 0, 0, 0.12), -5px 5px 10px rgba(139, 30, 34, 0.15);
-    
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
-    animation: floating3D 4s ease-in-out infinite;
-}
-
-.dish-graphic {
-    width: 105%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 50%;
-    
-    /* Pushes graphic out of the container background in Z-axis */
-    transform: translateZ(50px) scale(1.05); 
-    filter: drop-shadow(-10px 15px 20px rgba(0,0,0,0.25));
-    transition: var(--smooth-ease);
-}
-
-/* Hover over image interaction */
-.hero-3d-card:hover {
-    transform: rotateX(10deg) rotateY(-10deg) rotateZ(2deg) scale(1.02);
-    box-shadow: -25px 30px 50px rgba(0, 0, 0, 0.2), -5px 5px 15px rgba(139, 30, 34, 0.25);
-}
-
-.hero-3d-card:hover .dish-graphic {
-    transform: translateZ(80px) scale(1.08); /* Pops out extra on mouse hover */
-}
-
-/* Dynamic elements */
-.food-steam {
-    position: absolute;
-    top: 15%;
-    right: 25%;
-    font-size: 2rem;
+.dish-graphic { 
+    width: 100%; 
+    max-width: 400px; 
+    border-radius: 20px; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     z-index: 1;
-    animation: steamRise 3s infinite ease-out;
+    animation: float 4s ease-in-out infinite;
 }
 
-@keyframes steamRise {
-    0% { transform: translateY(0) scale(1); opacity: 0.8; }
-    50% { transform: translateY(-25px) scale(1.2); opacity: 0; }
-    100% { transform: translateY(0) scale(1); opacity: 0; }
+.glow-effect {
+    position: absolute; width: 300px; height: 300px; background: #d4af37;
+    filter: blur(100px); opacity: 0.2; z-index: 0;
 }
 
-@keyframes floating3D {
-    0% { transform: rotateX(15deg) rotateY(-15deg) rotateZ(5deg) translateY(0px); }
-    50% { transform: rotateX(12deg) rotateY(-12deg) rotateZ(4deg) translateY(-15px); }
-    100% { transform: rotateX(15deg) rotateY(-15deg) rotateZ(5deg) translateY(0px); }
+/* Button */
+.btn-primary {
+    background: linear-gradient(45deg, #d4af37, #f2c97d);
+    color: #1a0a0a; padding: 18px 40px; border-radius: 50px;
+    text-decoration: none; font-weight: 800; display: inline-flex;
+    align-items: center; gap: 10px; transition: 0.4s;
 }
 
-/* ==========================================================================
-   Step 2: Responsive Adjustments (Mobile Optimization)
-   ========================================================================== */
-@media (max-width: 1150px) {
-    .hero { padding: 40px 5%; }
-    .hero-title { font-size: 2.8rem; }
-    .hero-3d-card { width: 370px; height: 370px; }
-}
-
+/* --- MOBILE RESPONSIVE (Yahan magic hoga) --- */
 @media (max-width: 900px) {
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 50px 5% 70px 5%;
-        min-height: auto;
+    .hero { 
+        flex-direction: column; /* Content upar, Image neeche */
+        text-align: center; 
+        padding: 60px 20px; 
     }
-    .hero-content { margin-top: 45px; max-width: 100%; }
-    .hero-location { margin: 0 auto 35px auto; border-radius: 10px; border-left: none; border-top: 4px solid var(--primary-maroon); }
-    .hero-buttons { justify-content: center; flex-direction: column; gap: 15px; align-items: center; }
-    .btn-primary-3d, .btn-secondary-3d { width: 100%; max-width: 320px; }
-    .hero-image-area { justify-content: center; width: 100%; }
-    .hero-3d-card { width: 320px; height: 320px; }
+    .hero-content { text-align: center; order: 1; } /* Content pehle */
+    .hero-image-area { order: 2; margin-top: 50px; } /* Image baad mein */
+    .hero-desc { margin: 0 auto 30px auto; }
+    .hero-title { font-size: 2.5rem; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 /* HERO SECTION END */
 
